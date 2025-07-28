@@ -1,0 +1,18 @@
+{
+    "name": "ContentSummary",
+    "descripttion": "",
+    "files": {
+        "html": {
+            "path": "./ContentSummary.html"
+        },
+        "css": {
+            "path": "./ContentSummary.css"
+        }
+    },
+    "behavior" : {
+        "apendToBody": false,
+        "lazyLoading": false,
+        "debug": false,
+        "fps": 0
+    }
+}

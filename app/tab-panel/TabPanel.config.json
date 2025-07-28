@@ -1,0 +1,18 @@
+{
+    "name": "TabPanel",
+    "descripttion": "",
+    "files": {
+        "html": {
+            "path": "./TabPanel.html"
+        },
+        "css": {
+            "path": "./TabPanel.css"
+        }
+    },
+    "behavior" : {
+        "apendToBody": false,
+        "lazyLoading": true,
+        "debug": false,
+        "fps": 0
+    }
+}

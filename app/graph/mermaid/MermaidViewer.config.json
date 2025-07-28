@@ -1,0 +1,18 @@
+{
+    "name": "MermaidViewer",
+    "descripttion": "",
+    "files": {
+        "html": {
+            "path": "./MermaidViewer.html"
+        },
+        "css": {
+            "path": "./MermaidViewer.css"
+        }
+    },
+    "behavior": {
+        "apendToBody": false,
+        "lazyLoading": false,
+        "fps": 0,
+        "debug": false
+    }
+}

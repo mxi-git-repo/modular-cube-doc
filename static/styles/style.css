@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+
+html {
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden;
+    font-family: 'Agency FB', sans-serif;
+    color: #8c8c8c;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    height: 100% !important;
+    background: #efefef;
+}
