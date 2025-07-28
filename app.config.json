@@ -1,0 +1,24 @@
+{
+  "modular-cube-components": [
+    {
+      "tag": "app-root",
+      "path": "./app/AppRoot.js"
+    },
+    {
+      "tag": "content-summary",
+      "path": "./app/content-summary/ContentSummary.js"
+    },
+    {
+      "tag": "collapse-panel",
+      "path": "./app/collapse-panel/CollapsePanel.js"
+    },
+    {
+      "tag": "tab-panel",
+      "path": "./app/tab-panel/TabPanel.js"
+    },
+    {
+      "tag": "code-viewer",
+      "path": "./app/code-viewer/CodeViewer.js"
+    }
+  ]
+}

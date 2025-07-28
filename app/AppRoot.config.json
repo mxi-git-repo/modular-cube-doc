@@ -1,0 +1,17 @@
+{
+    "name": "AppRoot",
+    "descripttion": "",
+    "files": {
+        "html": {
+            "path": "./AppRoot.html"
+        },
+        "css": {
+            "path": "./AppRoot.css"
+        }
+    },
+    "behavior" : {
+        "apendToBody": false,
+        "lazyLoading": true,
+        "debug": true
+    }
+}

@@ -1,0 +1,55 @@
+/* @import url(${this.cssUrl});*/
+/* TODO: temporary patch */
+pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs-comment,.hljs-quote{color:#7285b7}.hljs-deletion,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#ff9da4}.hljs-built_in,.hljs-link,.hljs-literal,.hljs-meta,.hljs-number,.hljs-params,.hljs-type{color:#ffc58f}.hljs-attribute{color:#ffeead}.hljs-addition,.hljs-bullet,.hljs-string,.hljs-symbol{color:#d1f1a9}.hljs-section,.hljs-title{color:#bbdaff}.hljs-keyword,.hljs-selector-tag{color:#ebbbff}.hljs{background:#002451;color:#fff}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+
+:host(.loaded) {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+:host(.done) {
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+:host {
+    display: block;
+    width: calc(100% - 16px);
+    font-family: 'Agency FB', sans-serif;
+    padding: 8px;
+}
+
+pre {
+    margin: unset;
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #9f9f9f;
+        border-radius: 8px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        cursor: grabbing;
+        background: #777;
+    }
+}
+
+code {
+    max-height: 250px;
+    border-radius: 4px !important;
+}
+
+pre code.hljs {
+    padding: 0.25cm;
+}

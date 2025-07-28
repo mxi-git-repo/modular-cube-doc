@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ModularCube.js</title>
+    <script type="importmap">
+        {
+            "imports": {
+                "@modular-cube": "https://cdn.jsdelivr.net/gh/mxi-git-repo/modular-cube-release@main/main.js"
+            }
+        }
+    </script>
+    <script type="module" src="./initialize.js"></script>
+    <link rel="icon" href="./static/images/ModularCube.ico" type="image/x-icon">
+    <link rel="stylesheet" media="" href="https://fonts.cdnfonts.com/css/agency-fb" type="text/css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border:0;
+        }
+
+        html {
+            width: 100vw !important;
+            height: 100vh !important;
+            overflow: hidden;
+            font-family: 'Agency FB', sans-serif;
+            color: #8c8c8c;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100% !important;
+            height: 100% !important;
+            background: #efefef;
+        }
+    </style>
+</head>
+<body>
+    <app-root></app-root>
+</body>
+</html>

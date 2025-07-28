@@ -1,0 +1,17 @@
+{
+    "name": "CollapsePanel",
+    "descripttion": "",
+    "files": {
+        "html": {
+            "path": "./CollapsePanel.html"
+        },
+        "css": {
+            "path": "./CollapsePanel.css"
+        }
+    },
+    "behavior" : {
+        "apendToBody": false,
+        "lazyLoading": false,
+        "debug": false
+    }
+}

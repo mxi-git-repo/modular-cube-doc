@@ -1,0 +1,22 @@
+<!-- Tab-Panel -->
+<div class="tabs-container">
+    <div class="tabs-header">
+
+        <div class="tabs" id="contentScroll" forEach="${item} in ${this.tabs}">
+            <div 
+                class="tab" 
+                draggable="true"
+                clickEvent="switchTabs(event, '${item}')"
+            >
+                <param value="${item}">
+            </div>
+        </div>
+
+        <!-- Custom Scroll UI -->
+        <scroll-bar class="custom-scroll" id="customScroll">
+            <div class="scroll-track" id="scrollTrack"></div>
+        </scroll-bar>
+
+    </div>
+    <div id="content" class="content"></div>
+</div>
