@@ -58,7 +58,7 @@ export default class CodeViewer extends HTMLComponent {
             absolutePath = path.slice(1, -1).replace(/[^/]+$/, '');
         }
 
-        return absolutePath;
+        return absolutePath.replace("http://", "https://");
     }
 
     applySyntax(language) {
