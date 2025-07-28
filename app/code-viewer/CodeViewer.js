@@ -38,7 +38,7 @@ export default class CodeViewer extends HTMLComponent {
         this.language = this.getAttribute("language");
         this.theme = this.getAttribute("theme");
 
-        this.cssUrl = `${this.getAbsolutePath()}/highlight/styles/${this.theme ? this.theme : this.defaultTheme}.min.css`;
+        // this.cssUrl = `${this.getAbsolutePath()}/highlight/styles/${this.theme ? this.theme : this.defaultTheme}.min.css`;
 
         this.clear();
 
@@ -49,6 +49,7 @@ export default class CodeViewer extends HTMLComponent {
 
     }
 
+    /*
     getAbsolutePath() {
         let absolutePath = '';
         try {
@@ -60,6 +61,7 @@ export default class CodeViewer extends HTMLComponent {
 
         return absolutePath.replace("http://", "https://");
     }
+    */
 
     applySyntax(language) {
         const highlightedCode = HighlightJS.highlight(
