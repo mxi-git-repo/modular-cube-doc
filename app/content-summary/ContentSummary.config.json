@@ -1,0 +1,13 @@
+{
+    "name": "ContentSummary",
+    "descripttion": "",
+    "files": {
+        "html": {
+            "path": "./ContentSummary.html"
+        },
+        "css": {
+            "path": "./ContentSummary.css"
+        }
+    },
+    "apendToBody": false
+}

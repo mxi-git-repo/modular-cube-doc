@@ -1,0 +1,40 @@
+{
+  "modular-cube-components": [
+    {
+      "tag": "app-root",
+      "path": "./app/AppRoot.js"
+    },
+    {
+      "tag": "app-serve",
+      "path": "./app/app-serve/AppServe.js"
+    },
+    {
+      "tag": "frame-toolbar",
+      "path": "./app/frame-toolbar/FrameToolbar.js"
+    },
+    {
+      "tag": "frame-content",
+      "path": "./app/frame-content/FrameContent.js"
+    },
+    {
+      "tag": "collapse-panel",
+      "path": "./app/collapse-panel/CollapsePanel.js"
+    },
+    {
+      "tag": "tab-panel",
+      "path": "./app/tab-panel/TabPanel.js"
+    },
+    {
+      "tag": "code-viewer",
+      "path": "./app/code-viewer/CodeViewer.js"
+    },
+    {
+      "tag": "content-summary",
+      "path": "./app/content-summary/ContentSummary.js"
+    },
+    {
+      "tag": "windows-overlay",
+      "path": "./app/windows-overlay/WindowsOverlay.js"
+    }
+  ]
+}

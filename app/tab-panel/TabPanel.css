@@ -1,0 +1,124 @@
+:host(.loaded) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+:host(.done) {
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.tabs-container {
+  width: 100%;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background: #fafafa;
+}
+
+.tabs-header {
+  height: 1cm;
+  display: grid;
+  grid-template-columns:
+    1fr;
+  /* First row: 2 columns */
+  grid-template-rows: auto auto;
+  /* Two rows */
+  grid-template-areas:
+    "tabs option"
+    "scroll-bar scroll-bar";
+  /* second row is one column (spanning 2) */
+  background: #e5e5e5;
+}
+
+.tabs {
+  grid-area: tabs;
+  display: flex;
+  column-gap: 4px;
+  padding: 4px;
+  user-select: none;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1 1 0;
+  /* grow:1, shrink:1, base:0 */
+  max-width: 150px;
+  position: relative;
+  padding: 6px 28px 6px 12px;
+  background: #cfcfcf;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab.active {
+  background: whitesmoke;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.tab .close-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+}
+
+.add-tab {
+  grid-area: option;
+  padding: 6px 12px;
+  margin: 4px;
+  cursor: pointer;
+  user-select: none;
+  background: #ccc;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.content {
+  border-top: 1px solid #ccc;
+}
+
+scroll-bar {
+  grid-area: scroll-bar;
+  height: 3px;
+  background: #2d2d2d;
+}
+
+.scroll-wrapper {
+  width: 100%;
+  margin: auto;
+}
+
+.custom-scroll {
+  height: 3px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-track {
+  height: 100%;
+  background: #9f9f9f;
+  border-radius: 8px;
+  cursor: grab;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: background 0.2s;
+}
+
+.scroll-track:active {
+  cursor: grabbing;
+  background: #777;
+}
+
+.content-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

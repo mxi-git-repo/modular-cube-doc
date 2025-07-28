@@ -1,0 +1,14 @@
+{
+    "name": "CodeViewer",
+    "descripttion": "",
+    "files": {
+        "html": {
+            "path": "./CodeViewer.html"
+        },
+        "css": {
+            "path": "./CodeViewer.css"
+        }
+    },
+    "apendToBody": false,
+    "_comment": "'lazyLoading': true, 'debug': true"
+}

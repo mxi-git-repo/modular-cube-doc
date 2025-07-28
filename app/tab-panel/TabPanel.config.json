@@ -1,0 +1,13 @@
+{
+    "name": "TabPanel",
+    "descripttion": "",
+    "files": {
+        "html": {
+            "path": "./TabPanel.html"
+        },
+        "css": {
+            "path": "./TabPanel.css"
+        }
+    },
+    "apendToBody": false
+}
