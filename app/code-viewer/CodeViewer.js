@@ -1,7 +1,6 @@
 import { HTMLComponent } from '@modular-cube';
-import config from './CodeViewer.config.json' with { type: "json" };
-
 import { HighlightJS } from './highlight/core.js';
+import config from './CodeViewer.config.json' with { type: "json" };
 
 export default class CodeViewer extends HTMLComponent {
     static observedAttributes = ["language, theme"];

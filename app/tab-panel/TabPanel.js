@@ -1,6 +1,4 @@
-import { HTMLComponent } from '@modular-cube';
-import { parse } from '@modular-cube';
-
+import { HTMLComponent, parse } from '@modular-cube';
 import config from './TabPanel.config.json' with { type: "json" };
 
 export default class TabPanel extends HTMLComponent {

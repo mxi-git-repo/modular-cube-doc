@@ -13,6 +13,22 @@ export default class ContentSummary extends HTMLComponent {
         if (rootUl) {
             this.setListColors(rootUl);
         }
+
+        dom.querySelectorAll('.nested .toggle-container').forEach(toggle => {
+            const t = toggle.querySelector('.toggle');
+
+            t.addEventListener('click', function () {
+                // Get the next sibling (the <ul>) and toggle it
+                const childList = toggle.nextElementSibling;
+
+                if (childList && childList.tagName.toLowerCase() === 'ul') {
+                    const isVisible = getComputedStyle(childList).display === 'block';
+
+                    childList.style.display = isVisible ? 'none' : 'block';
+                    t.textContent = isVisible ? "▲" : "▼";
+                }
+            });
+        });
     }
 
     setListColors(ul, level = 1) {
