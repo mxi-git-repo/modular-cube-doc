@@ -6,6 +6,8 @@ export default class ContentSummary extends HTMLComponent {
         super.preProcess({ config });
     }
 
+    toProcess() { }
+
     atProcess() { }
 
     inProcess(dom) {

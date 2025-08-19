@@ -8,6 +8,7 @@ export default class AppRoot extends HTMLComponent {
     javascriptTab = stringify(['Javascript']);
     htmlTab = stringify(['HTML-Markup']);
     isResizing = false;
+    scrollId;
 
     preProcess() {
         super.preProcess({ config });
@@ -60,11 +61,40 @@ export default class AppRoot extends HTMLComponent {
         });
 
         Observable.subscribe('content-summary', (id) => {
-            const target = dom.querySelector(`#${id}`);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
+            this.scrollId = id;
+            this.scrollToSectionWhenReady(dom, id);
         });
+    }
+
+    isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+
+        if (!rect) return false;
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        return rect.top < windowHeight && rect.bottom > 0 && rect.left < windowWidth && rect.right > 0;
+    }
+
+    delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async scrollToSectionWhenReady(dom, id, delayMs = 1000) {
+        const target = dom.querySelector(`#${id}`);
+        if (!target) {
+            console.warn(`No target found for id: ${id}`);
+            return;
+        }
+
+        while (this.scrollId === id && !this.isElementInViewport(target)) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            await this.delay(delayMs);
+        }
+
+        // Final scroll to ensure visibility
+        if (this.scrollId === id && this.isElementInViewport(target)) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     startResize() {
