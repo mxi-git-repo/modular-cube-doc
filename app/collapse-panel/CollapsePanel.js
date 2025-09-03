@@ -9,7 +9,9 @@ export default class CollapsePanel extends HTMLComponent {
         super.preProcess({ config });
     }
 
-    atProcess() {
+    toProcess() { }
+
+    async atProcess() {
         this.title = this.getAttribute("title");
     }
 

@@ -1,7 +1,7 @@
 {
   "modularCube": {
     "application": {
-      "name": "AppRoot",
+      "name": "app-root",
       "descripttion": "",
       "files": {
         "html": {

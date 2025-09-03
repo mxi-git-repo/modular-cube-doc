@@ -9,7 +9,6 @@
 
 .tabs-container {
   width: calc(100% - 2px);
-  margin-bottom: 12px;
   border: 1px solid #ccc;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   background: #fafafa;
@@ -78,6 +77,7 @@
 }
 
 .content {
+  padding: 0.25cm;
   border-top: 1px solid #ccc;
 }
 

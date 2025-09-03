@@ -16,7 +16,7 @@ export default class AppRoot extends HTMLComponent {
 
     toProcess() { }
 
-    atProcess() { }
+    async atProcess() { }
 
     inProcess(dom) {
         const resizable = dom.querySelector('#resizable');
@@ -40,6 +40,7 @@ export default class AppRoot extends HTMLComponent {
 
         document.addEventListener('mousemove', (e) => {
             if (!this.isResizing) return;
+
             const containerRect = dom.host.getBoundingClientRect();;
             const newWidth = Math.min(
                 Math.max(e.clientX - containerRect.left, minWidth),
@@ -47,6 +48,7 @@ export default class AppRoot extends HTMLComponent {
             );
 
             resizable.style.width = `${newWidth}px`;
+
             const shouldHide = newWidth <= minWidth;
             resizableContent.style.overflowY = shouldHide ? 'hidden' : 'auto';
             resizableContent.style.visibility = shouldHide ? 'hidden' : 'visible';
@@ -66,21 +68,29 @@ export default class AppRoot extends HTMLComponent {
         });
     }
 
+
+
     isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
 
         if (!rect) return false;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
         const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
         return rect.top < windowHeight && rect.bottom > 0 && rect.left < windowWidth && rect.right > 0;
     }
+
+
 
     delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
+
+
     async scrollToSectionWhenReady(dom, id, delayMs = 1000) {
         const target = dom.querySelector(`#${id}`);
+
         if (!target) {
             console.warn(`No target found for id: ${id}`);
             return;

@@ -1,4 +1,5 @@
 import { HTMLComponent, parse } from '@modular-cube';
+
 import config from './TabPanel.config.json' with { type: "json" };
 
 export default class TabPanel extends HTMLComponent {
@@ -11,7 +12,9 @@ export default class TabPanel extends HTMLComponent {
         super.preProcess({ config });
     }
 
-    atProcess() {
+    toProcess() { }
+
+    async atProcess() {
         this.tabs = parse(this.getAttribute("tabs"));
     }
 

@@ -8,7 +8,7 @@ export default class ContentSummary extends HTMLComponent {
 
     toProcess() { }
 
-    atProcess() { }
+    async atProcess() { }
 
     inProcess(dom) {
         const rootUl = dom.querySelector('.nested');

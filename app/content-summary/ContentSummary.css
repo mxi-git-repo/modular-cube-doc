@@ -16,13 +16,11 @@
         border: 1px solid #edebeb;
         border-radius: 2px;
         background-color: whitesmoke;
-        
+
         .toggle {
-            width: 12px;
-            height: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: calc(16px - 2px);
+            height: calc(16px - 2px);
+            text-align: center;
             font-size: smaller;
             color: #1a1a1a;
             padding: 2px;
@@ -85,4 +83,22 @@ li div::before {
     bottom: 50%;
     width: 0.2cm;
     border-bottom: 1px solid #999;
+}
+
+.badge {
+    background-color: rgba(63, 128, 234, .175);
+    color: #3f80ea;
+    padding: .25rem;
+    border-radius: .2rem;
+}
+
+.badge-lifecycle {
+    background-color: rgb(63 234 67 / 18%);
+    color: #6ca766;
+    padding: .25rem;
+    border-radius: .2rem;
+}
+
+.badge-lifecycle:hover {
+    color: #4f7b4b;
 }

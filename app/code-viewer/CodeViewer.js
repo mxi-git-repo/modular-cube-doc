@@ -1,9 +1,13 @@
 import { HTMLComponent } from '@modular-cube';
-import { HighlightJS } from './highlight/core.js';
 import config from './CodeViewer.config.json' with { type: "json" };
+
+import { HighlightJS } from './highlight/core.js';
 
 export default class CodeViewer extends HTMLComponent {
     static observedAttributes = ["language, theme"];
+
+    /** @type {Map<string, Promise<any>>} */
+    static languageModuleCache = new Map();
 
     language = null;
     theme = null;
@@ -11,11 +15,15 @@ export default class CodeViewer extends HTMLComponent {
     defaultTheme = 'vs';
     cssUrl = '';
 
+    renderedContent = '';
+
     preProcess() {
         super.preProcess({ config });
     }
 
-    async atProcess(__refDom) {
+    toProcess() { }
+
+    async atProcess() {
         const instances = this.findAllCustomParents(this);
         let rawSnippet = ``;
 
@@ -37,18 +45,16 @@ export default class CodeViewer extends HTMLComponent {
         this.language = this.getAttribute("language");
         this.theme = this.getAttribute("theme");
 
-        // this.cssUrl = `${this.getAbsolutePath()}/highlight/styles/${this.theme ? this.theme : this.defaultTheme}.min.css`;
+        this.cssUrl = `${this.getAbsolutePath()}highlight/styles/${this.theme ? this.theme : this.defaultTheme}.min.css`;
+        this.prependCssContent(await this.getFileContent(this.cssUrl));
 
-        this.clear();
+        this.clear();        
+    }
 
+    async inProcess(dom) {
         await this.fetchLanguage(this.language);
     }
 
-    inProcess(__refDom) {
-
-    }
-
-    /*
     getAbsolutePath() {
         let absolutePath = '';
         try {
@@ -58,9 +64,8 @@ export default class CodeViewer extends HTMLComponent {
             absolutePath = path.slice(1, -1).replace(/[^/]+$/, '');
         }
 
-        return absolutePath.replace("http://", "https://");
+        return absolutePath;
     }
-    */
 
     applySyntax(language) {
         const highlightedCode = HighlightJS.highlight(
@@ -161,10 +166,14 @@ export default class CodeViewer extends HTMLComponent {
         return lines.join('\n');
     }
 
+    /**
+     * Dynamically loads and registers a language for HighlightJS only once.
+     * @param {string} language
+     */
     async fetchLanguage(language) {
         const path = `./highlight/languages/${language}.js`;
 
-        try {
+         try {
             const module = await import(/* webpackIgnore: true */ path);
             let languageDefinition = module[language];
 
