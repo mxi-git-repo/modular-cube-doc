@@ -2,23 +2,25 @@ import { HTMLComponent, Observable, tween, stringify } from '@modular-cube';
 import config from './AppRoot.config.json' with { type: "json" };
 
 export default class AppRoot extends HTMLComponent {
-    tabNames = stringify(['Javascript', 'HTML-Markup', 'CSS-Styles', 'Preview-Source-Code']);
-    configTabNames = stringify(['Javascript', 'Config']);
-    displayTab = stringify(['Config']);
-    javascriptTab = stringify(['Javascript']);
-    htmlTab = stringify(['HTML-Markup']);
+    tabNames = stringify(['MyComponent.js', 'MyComponent.html', 'MyComponent.css', 'MyComponent.config.json']);
+    
     isResizing = false;
     scrollId;
+    expression = "${this.expression}";
+    forExpression = 'forEach="${item} in ${this.items}"';
+    forExpressionItem = '${item}';
 
-    preProcess() {
+    async preProcess() {
         super.preProcess({ config });
     }
 
-    toProcess() { }
+    async toProcess() { }
 
-    async atProcess() { }
+    async atProcess(dom) {
+        dom.insertAdjacentHTML('beforeend', this.template);
+    }
 
-    inProcess(dom) {
+    async inProcess(dom) {
         const resizable = dom.querySelector('#resizable');
         const resizableContent = resizable.querySelector('#expandable');
         const outline = dom.querySelector('#outline');
@@ -47,9 +49,8 @@ export default class AppRoot extends HTMLComponent {
                 containerWidth
             );
 
-            resizable.style.width = `${newWidth}px`;
-
             const shouldHide = newWidth <= minWidth;
+            resizable.style.width = `${newWidth}px`;
             resizableContent.style.overflowY = shouldHide ? 'hidden' : 'auto';
             resizableContent.style.visibility = shouldHide ? 'hidden' : 'visible';
         });
@@ -66,9 +67,23 @@ export default class AppRoot extends HTMLComponent {
             this.scrollId = id;
             this.scrollToSectionWhenReady(dom, id);
         });
+
+        // Navigation bar
+        const nav = dom.querySelector('.navigation');
+        // Initialize: mark the first <a> as active
+        const firstLink = nav.querySelector('a');
+
+        if (firstLink) firstLink.classList.add('active');
+
+        // Handle clicks
+        nav.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+
+            if (!link) return;
+            nav.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+            link.classList.add('active');
+        });
     }
-
-
 
     isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
@@ -76,17 +91,12 @@ export default class AppRoot extends HTMLComponent {
         if (!rect) return false;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
         const windowWidth = window.innerWidth || document.documentElement.clientWidth;
-
         return rect.top < windowHeight && rect.bottom > 0 && rect.left < windowWidth && rect.right > 0;
     }
-
-
 
     delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-
-
 
     async scrollToSectionWhenReady(dom, id, delayMs = 1000) {
         const target = dom.querySelector(`#${id}`);
@@ -115,5 +125,9 @@ export default class AppRoot extends HTMLComponent {
     endResize() {
         this.isResizing = false;
         document.body.style.userSelect = '';
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
     }
 }

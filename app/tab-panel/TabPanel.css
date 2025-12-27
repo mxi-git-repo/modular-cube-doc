@@ -53,6 +53,7 @@
 .tab.active {
   background: whitesmoke;
   border-bottom: 1px solid whitesmoke;
+  color: #3f80ea;
 }
 
 .tab .close-btn {

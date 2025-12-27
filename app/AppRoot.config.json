@@ -12,6 +12,6 @@
     "behavior" : {
         "apendToBody": false,
         "lazyLoading": false,
-        "debug": true
+        "debug": false
     }
 }

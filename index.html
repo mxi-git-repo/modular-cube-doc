@@ -9,35 +9,1428 @@
             }
         }
     </script>
-    <script type="module" src="./initialize.js"></script>
+    <script type="module" src="./main.js"></script>
     <link rel="icon" href="./static/images/ModularCube.ico" type="image/x-icon">
-    <link rel="stylesheet" media="" href="https://fonts.cdnfonts.com/css/agency-fb" type="text/css" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            border:0;
-        }
-
-        html {
-            width: 100vw !important;
-            height: 100vh !important;
-            overflow: hidden;
-            font-family: 'Agency FB', sans-serif;
-            color: #8c8c8c;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100% !important;
-            height: 100% !important;
-            background: #efefef;
-        }
-    </style>
+    <link rel="stylesheet" href="./static/styles/style.css">
+    <link rel="stylesheet" media="" href="https://fonts.cdnfonts.com/css/agency-fb" type="text/css"/>
 </head>
 <body>
-    <app-root></app-root>
+    <app-root>
+        <template>
+            <!-- Headline Title/Logo -->
+            <headline>
+                <div class="title">
+                    <span class="side left">MODULAR</span>
+                    <img src="../static/images/ModularCube.ico" alt="Modular Cube">
+                    <span class="side right">CUBE.JS</span>
+                </div>
+                <div class="navigation"> 
+                    <!--<a clickEvent="navigate()">Documentation</a> <span>-</span>-->
+                    <a>Documentation</a> <span>-</span>
+                    <a>Setting Up a Project</a> <span>-</span>
+                    <a>Tutorial</a> <span>-</span>
+                    <a>Components</a>
+                </div>
+            </headline>
+            <!-- Manual -->
+            <manual> 
+                <!-- Content Summary -->
+                <div id="ref_resizable"></div>
+                <div id="resizable"> 
+                    <div id="outline" class="outline">
+                        <div id="expandable" class="expandable">
+                            <content-summary>
+                                <template>
+                                    <p class="title"> Modular Cube</p>
+                                    <ul>
+                                        <li toggle scrollTo="introduction">
+                                            Introduction 📘
+                                            <ul>
+                                                <li scrollTo="introduction">What is Modular Cube?</li>
+                                                <li scrollTo="why-use-it">Why use Modular Cube?</li>
+                                                <li scrollTo="key-features">Key features</li>
+                                                <li scrollTo="web-standards">Architecture Based on Web Standards</li>
+                                            </ul>
+                                        </li>
+                                        <li toggle scrollTo="core-concepts">
+                                            Core Concepts 📖
+                                            <ul>
+                                                <li toggle scrollTo="lifecycle">Lifecycle
+                                                    <ul>
+                                                        <li toggle scrollTo="constructor">Constructor
+                                                            <ul>
+                                                                <li scrollTo="preProcess">preProcess</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li toggle scrollTo="connectedCallback">connectedCallback
+                                                            <ul>
+                                                                <li scrollTo="toProcess">toProcess</li>
+                                                                <li scrollTo="preProcess">atProcess</li>
+                                                                <li scrollTo="preProcess">inProcess</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li scrollTo="adoptedCallback">adoptedCallback</li>
+                                                        <li scrollTo="attributeChangedCallback">attributeChangedCallback</li>
+                                                        <li scrollTo="adoptedCallback">disconnectedCallback</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li toggle scrollTo="project-structure">
+                                            Project Structure 🗃️
+                                            <ul>
+                                                <li scrollTo="overall-folder-organization">Overall folder organization</li>
+                                                <li scrollTo="application-configuration"><span>Application Configuration</span> <span class="badge">(app.config.json)</span></li>
+                                                <li scrollTo="component-initialization'"><span>Component Initialization</span> <span class="badge">(init.js)</span></li>
+                                                <li scrollTo="entry-point"><span>Entry Point</span> <span class="badge">(index.html)</span></li>
+                                            </ul>
+                                        </li>
+                                        <li toggle scrollTo="component-setup-guide">
+                                            Component Setup 🗂️
+                                            <ul>
+                                                <li scrollTo="file-structure">Component File Structure</li>
+                                                <li toggle scrollTo="component-file">
+                                                    Component Files
+                                                    <ul>
+                                                        <li scrollTo="configuration"><span>Configuration</span> <span class="badge">(.config.json)</span></li>
+                                                        <li scrollTo="template"><span>Template</span> <span class="badge">(.html)</span></li>
+                                                        <li scrollTo="styling"><span>Styling</span> <span class="badge">(.css)</span></li>
+                                                        <li scrollTo="my-component"><span>MyComponent</span> <span class="badge">(.js)</span></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li toggle scrollTo="using-components">
+                                            Using Components 🧩
+                                            <ul>
+                                                <li toggle scrollTo="work-with-html">
+                                                    HTML
+                                                    <ul>
+                                                        <li toggle scrollTo="html-directives">
+                                                            Directives
+                                                            <ul>
+                                                                <li toggle scrollTo="html-variable">
+                                                                    Variable
+                                                                    <ul>
+                                                                        <li scrollTo="template-interpolation">Template Interpolation</li>
+                                                                        <li scrollTo="parameter-injection">Parameter Injection</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li scrollTo="html-condition">if / else if / else</li>
+                                                                <li scrollTo="html-loop">forEach</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li scrollTo="html-events">Events</li>
+                                                    </ul>
+                                                </li>
+                                                <li toggle scrollTo="work-with-css">
+                                                    CSS
+                                                    <ul>
+                                                        <li toggle scrollTo="css-directives">
+                                                            Directives
+                                                            <ul>
+                                                                <li scrollTo="css-variable">Variable</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li toggle scrollTo="work-with-js">
+                                                    JavaScript
+                                                    <ul>
+                                                        <li scrollTo="observable">Observable</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li  scrollTo="changelog">Changelog 📝</li>
+                                    </ul>
+                                </template>
+                            </content-summary>
+                        </div>
+                        <div class="resizer" mousedownEvent="startResize()"></div>
+                    </div>
+                    <div class="badges">
+                        <img src="../static/images/www.ico" alt="Web" style="width: 0.6cm;">
+                        <img src="../static/images/javascript.ico" alt="Javascript">
+                        <img src="../static/images/html.ico" alt="HTML5">
+                        <img src="../static/images/css.ico" alt="CSS3">
+                        <div class="badge">v1.0.0</div>
+                    </div> 
+                </div>
+                <!-- Documentation -->
+                <div class="documentation">
+                    <!-- Introduction -->
+                    <section>
+                        <div>
+                            <h2 id="introduction">📘 Introduction</h2>
+                            <p class="italic-text">A frontend framework built entirely on web standards.</p>
+                        </div>
+                        
+                        <section class="sub-section">
+                            <!-- Abstract -->
+                            <p>
+                                <span class="app-title">Modular Cube</span> is a frontend framework that builds directly on web standards, enabling modular and maintainable applications without virtual DOMs or build pipelines.
+                            </p>
+                            <!-- What is Modular Cube? -->
+                            <h3 id="introduction">What is Modular Cube?</h3>
+                            <p>
+                                Modular Cube is a frontend framework designed around web standards. 
+                                It operates entirely on native browser features such as <span class="highlight">Custom Elements</span>, <span class="highlight">HTML Templates</span>, <span class="highlight">ES Modules</span>, and the <span class="highlight">Shadow DOM</span>. 
+                                This foundation enables user interface components to be defined with standard HTML and JavaScript while supporting scoped rendering, declarative structure, and encapsulated behaviors. 
+                                The framework avoids virtual DOM abstractions and transpilation layers. 
+                                By following this model, Modular Cube supports the development of modular, maintainable applications that run directly in the browser without additional build processes or external dependencies.
+                            </p>
+                            <!-- Why use Modular Cube? -->
+                            <h3 id="why-use-it">Why use Modular Cube?</h3>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <li>
+                                        Modular Cube is designed to simplify frontend development while relying solely on modern web standards.
+                                    </li>
+                                    <ul>
+                                        <li><span>🔹</span><p><span class="bold-text">Built entirely on native browser features</span> such as Custom Elements, Shadow DOM, and ES Modules. No external dependencies or build tools are required.</p></li>
+                                        <li><span>🔹</span><p><span class="bold-text">Avoids the overhead</span> from complex runtime engines or compilation steps, making applications faster to load and easier to maintain.</p></li>
+                                        <li><span>🔹</span><p><span class="bold-text">Encapsulation by design</span>, with isolated structure and styling through Shadow DOM, ensuring clean separation without global conflicts.</p></li>
+                                        <li><span>🔹</span><p><span class="bold-text">Interoperable and compatible</span>, since it uses only HTML, CSS, and JavaScript, allowing seamless integration with existing codebases and libraries.</p></li>
+                                        <li><span>🔹</span><p><span class="bold-text">Reduced abstraction layers</span>, which promotes long-term sustainability, predictability, and easier debugging.</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+
+                            <h3 id="key-features">Key features</h3>
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">🧬</div>
+                                    <div class="feature-text">
+                                        <div class="feature-title">Template Interpolation</div>
+                                        <p class="feature-desc">Embed JavaScript expressions directly in your HTML using <code>${this.expression}</code>. Supported in text content, attributes, class names, and inline styles.</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-card">
+                                    <div class="feature-icon">🧩</div>
+                                    <div class="feature-text">
+                                        <div class="feature-title">Conditional templating</div>
+                                        <p class="feature-desc">Use <code>if</code> directives and its extended forms (e.g. <code>else if</code>, <code>else</code>) to selectively include elements in the DOM based on runtime conditions.</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-card">
+                                    <div class="feature-icon">📋</div>
+                                    <div class="feature-text">
+                                        <div class="feature-title">List Rendering</div>
+                                        <p class="feature-desc">Use <code>forEach</code> directives to generate repeated markup from iterable data structures.</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-card">
+                                    <div class="feature-icon">🖱️</div>
+                                    <div class="feature-text">
+                                        <div class="feature-title">Event Binding</div>
+                                        <p class="feature-desc">Bind native DOM events using a consistent pattern (<code>clickEvent</code>, <code>inputEvent</code>, etc.) to trigger scoped logic without manually registering listeners.</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-card">
+                                    <div class="feature-icon">🎯</div>
+                                    <div class="feature-text">
+                                        <div class="feature-title">Targeted Updates</div>
+                                        <p class="feature-desc">DOM updates are scoped and localized, reducing overhead and eliminating re-renders.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Architecture Based on Web Standards -->
+                            <h3 id="web-standards">Architecture Based on Web Standards</h3>
+                            <p>
+                                The architecture of Modular Cube is structured around the core features natively supported by browsers. By relying on these capabilities, the framework ensures that components remain portable, efficient, and aligned with the evolution of the web platform.
+                            </p>
+                            <div class="why-container">
+                                <div class="why-item">
+                                    <div>Custom Elements</div>
+                                    <p>Encapsulate behavior, state, and rendering logic in self-contained components defined as JavaScript classes. Each element is registered as a native HTML tag, allowing seamless integration into the DOM.</p>
+
+                                </div>
+                                <div class="why-item">
+                                    <div>HTML Template Element</div>
+                                    <p>Provides reusable blocks of markup that are parsed but not rendered immediately. Templates serve as the foundation for dynamic rendering and runtime instantiation.</p>
+
+                                </div>
+                                <div class="why-item">
+                                    <div>ES Modules</div>
+                                    <p>Enable modular development by defining clear boundaries for imports and exports. All components and logic are authored as ES modules, ensuring compatibility with the standard JavaScript module system.</p>
+
+                                </div>
+                                <div class="why-item">
+                                    <div>Shadow DOM</div>
+                                    <p>Delivers encapsulation of both structure and styling, isolating internal implementations from the global DOM while supporting predictable component behavior.</p>
+
+                                </div>
+                            </div>
+                            <div class="note-card">
+                                <h3>💡 Design Intent</h3>
+                                <p> 
+                                    Modular Cube does not aim to create a new way of building the web, it simply leverages the web as it exists today.
+                                    Its goal is to <span class="title">empower developers to write UI code that is expressive, explicit, and maintainable,</span> while avoiding the hidden complexity often introduced by large abstractions. 
+                                    It makes no assumptions about how your application is structured, but provides lightweight conventions to support common frontend needs: data-binding, conditional logic, event handling, and templating.
+                                    By using only platform features, Modular Cube ensures forward compatibility and encourages a development style that aligns closely with how browsers operate. It is ideal for projects where performance, clarity, and long-term maintainability are key concerns.
+                                </p>
+                            </div>
+                            <p>
+                                These web standards work together to provide a consistent foundation for building components. 
+                                They ensure that applications remain compatible with the native browser environment, while keeping the architecture simple and easy to extend.
+                            </p>
+                        </section>
+                    </section>
+                    <!-- Core Concepts -->
+                    <section>
+                        <h2 id="core-concepts">📖 Core Concepts</h2>
+                        <section class="sub-section">
+                            <p>
+                                <span class="app-title">Modular Cube</span> lifecycle builds on the native Web Component lifecycle, extending it with custom states for more granular control over initialization and rendering. 
+                                This ensures components are predictable, configurable, and modular throughout their lifetime in the DOM.
+                            </p>
+                            <!-- Lifecycle -->
+                            <h3 id="lifecycle">Lifecycle</h3>
+                            <p>
+                                The lifecycle of a component defines the sequence of stages a component passes through from creation to removal. 
+                                It combines standard Web Component callbacks with framework specific processing states to ensure proper initialization, configuration, and rendering.
+                            </p> 
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <li>
+                                        The Web Component lifecycle methods are as follows:
+                                    </li>
+                                    <ul>
+                                        <li><span>🔹</span><p>constructor()</p></li>
+                                        <li><span>🔹</span><p>connectedCallback()</p></li>
+                                        <li><span>🔹</span><p>adoptedCallback()</p></li>
+                                        <li><span>🔹</span><p>attributeChangedCallback()</p></li>
+                                        <li><span>🔹</span><p>disconnectedCallback()</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="sub-container flow-chart-container">
+                                <div>
+                                    <span class="highlight">HTML Element</span>
+                                </div>
+                                <div class="flow-chart-center">
+                                    <img src="../static/images/HTMLElementFlowChart.svg" alt="HTMLComponentFlowChart" width="50%">
+                                </div>
+                            </div>
+                            <h4>📌 Lifecycle Schema (Detailed)</h4>
+                            <p>
+                                This diagram provides a simplified, linear view of the component lifecycle. 
+                                A quick overview to understand the sequence of events and the internal states of a Modular Cube component.
+                            </p>
+                            <div class="sub-container flow-chart-container">
+                                <div>
+                                    <span class="highlight">HTML Component</span>
+                                </div>
+                                <div class="flow-chart-center">
+                                    <img src="../static/images/HTMLComponentFlowChart.svg" alt="HTMLComponentFlowChart" width="50%">
+                                </div>
+                            </div>
+                            <!-- constructor -->
+                            <h3 id="constructor">constructor</h3>
+                            <p>
+                                When a component instance is created, the constructor method is invoked. 
+                                In Modular Cube, this immediately calls the <code>preProcess</code> state. At this stage, the component loads and validates its configuration, ensuring all required parameters (such as references to HTML, CSS, or behavior settings) are in place before any further lifecycle steps begin.            
+                            </p>
+                            <!-- preProcess -->
+                            <h3 id="preProcess">constructor<span class="doc-spacer"> ∕ </span>preProcess</h3>
+                            <p>
+                                When a component’s constructor is invoked, the <code>preProcess</code> state is automatically executed. 
+                                During this stage, configuration data is loaded, validated, and prepared before any rendering or attachment to the DOM occurs.
+                                The constructor expects a mandatory configuration object with the following structure.
+                            </p>
+                            <div class="code-viewer-container">
+                                <p><code>(MyComponent.config.json)</code></p>
+                                <code-viewer 
+                                    class="tabcontent"
+                                    data-tab-id="Config"
+                                    renderedContent="COMPONENT_CONFIG_STRUCTURE" 
+                                    language="json"
+                                    theme="tomorrow-night-blue">
+                                </code-viewer>
+                            </div>
+                            <div class="code-viewer-container">
+                                <p><code>(MyComponent.js)</code></p>
+                                <code-viewer
+                                    class="tabcontent" 
+                                    data-tab-id="Javascript" 
+                                    renderedContent="COMPONENT_CLASS_STRUCTURE"
+                                    language="javascript" 
+                                    theme="tomorrow-night-blue">
+                                </code-viewer>
+                            </div>
+                            <!-- connectedCallback -->
+                            <h3 id="connectedCallback">connectedCallback</h3>
+                            <p>
+                                The <code>connectedCallback()</code> method is invoked automatically when a custom element is added to the DOM. 
+                                This marks the point where the component becomes active and begins its operational lifecycle.
+                            </p>
+                            <p>
+                                This stage is aligned with the <code>toProcess</code>, <code>atProcess</code>, and <code>inProcess</code> states, which provide a structured sequence for initialization, rendering, and post-render logic.
+                                This structured approach ensures that components are consistently initialized and rendered in a predictable order, reducing errors and improving maintainability.
+                            </p>
+                            <!-- toProcess -->
+                            <h3 id="toProcess">connectedCallback<span class="doc-spacer"> ∕ </span>toProcess</h3>
+                            <p>
+                                When the component is first attached to the DOM, it enters the <code>toProcess</code> state. 
+                                This marks the beginning of the active lifecycle, where the component validates prerequisites and prepares resources, but no rendering has yet taken place.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent" 
+                                renderedContent="TOPROCESS_STATE"
+                                language="javascript" 
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- atProcess -->
+                            <h3 id="atProcess">connectedCallback<span class="doc-spacer"> ∕ </span>atProcess</h3>
+                            <p>
+                                Immediately after prerequisites are resolved within <code>connectedCallback</code>, the <code>atProcess</code> state runs.
+                                The component has reached the point where rendering logic is about to be executed. 
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="ATPROCESS_STATE"
+                                language="javascript"
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- inProcess -->
+                            <h3 id="inProcess">connectedCallback<span class="doc-spacer"> ∕ </span>inProcess</h3>
+                            <p>
+                                This state occurs after the component has completed its rendering phase. 
+                                The DOM is now fully available for manipulation, and all initial behaviors are active. 
+                                At this point, logic that depends on the rendered structure, such as querying the DOM with querySelector, setting focus, or attaching runtime event listeners can be safely executed. 
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="INPROCESS_STATE"
+                                language="javascript" 
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- adoptedCallback -->
+                            <h3 id="adoptedCallback">adoptedCallback</h3>
+                            <p>
+                                The <code>adoptedCallback</code> is a lifecycle method that is called when a custom element is moved from one document to another, such as between iframes or windows.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent" 
+                                renderedContent="ADOPTED_CALLBACK_"
+                                language="javascript" 
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- attributeChangedCallback -->
+                            <h3 id="attributeChangedCallback">attributeChangedCallback</h3>
+                            <p>
+                                The <code>attributeChangedCallback</code> is a lifecycle method in Web Components, specifically in the Custom Elements API. 
+                                It's used in custom HTML elements to detect when one of the element's observed attributes has changed.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="ATTRIBUTE_CHANGED_CALLBACK"
+                                language="javascript" 
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- disconnectedCallback -->
+                            <h3 id="disconnectedCallback">disconnectedCallback</h3>
+                            <p>
+                                The <code>disconnectedCallback</code> is a lifecycle method that’s called when a custom element is removed from the DOM.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="DISCONNECTED_CALLBACK"
+                                language="javascript" 
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- overview -->
+                            <h4>📌 Overview</h4>
+                            <p>
+                                The Modular Cube component lifecycle defines how components transition through initialization, configuration, rendering, and cleanup. 
+                                It combines the standard Web Component lifecycle methods with custom internal states <code>preProcess</code>, <code>toProcess</code>, <code>atProcess</code>, and <code>inProcess</code> to ensure predictable behavior, structured processing, and safe DOM interactions throughout a component’s existence.
+                            </p>
+                            <p>
+                                The component lifecycle in Modular Cube unifies the standard Web Component callbacks with additional custom states. This approach establishes a predictable sequence in which configuration is validated, resources are prepared, rendering takes place, and post-render behavior becomes available.
+                                By following this structured progression, components remain consistent, modular, and easier to maintain, regardless of complexity or use case.
+                            </p>
+                        </section>
+                    </section>
+                    <!-- Project Structure -->
+                    <section>
+                        <h2 id="project-structure">🗃️ Project Structure</h2>
+                        <section class="sub-section">
+                            <!-- Overall Folder Organization -->
+                            <h3 id="overall-folder-organization">Overall Folder Organization</h3>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <li>A project consists of a set of files and folders that can be organized in a consistent structure.</li>
+                                    <ul>
+                                        <li><span>🔹</span><p>Configuration files, initialization logic, and the main entry point reside at the root level.</p></li>
+                                        <li><span>🔹</span><p>UI components are grouped within the <code>app/</code> directory.</p></li>
+                                        <li><span>🔹</span><p>Supporting folders such as <code>static/</code>, <code>modules/</code>, and <code>services/</code> are used to manage assets, reusable functionality, and core application logic.</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <p>
+                                This organization establishes distinct responsibilities for different parts of the project, making it easier to navigate, maintain, and extend over time.
+                            </p>
+                            <div class="sub-container flow-chart-container">
+                                <div class="flow-chart-left width40">
+                                    <img src="../static/images/HTMLComponentFolderStruct.svg" alt="HTMLComponentFlowChart" width="50%">
+                                </div>
+                            </div>
+                            <!-- Application Configuration -->
+                            <h3 id="application-configuration">Application Configuration <span class="badge">(app.config.json)</span></h3>
+                            <p>
+                                To make a component available to the application, it must be registered in the global application configuration file: <code>app.config.json</code>.
+                                This setup allows the framework to dynamically load and define the components at runtime.
+                            </p>
+                            <p>
+                                The application configuration file <code>app.config.json</code> contains a root object named <code>modularCube</code>, which describes both the <code>application</code> entry point and the <code>components</code> that will be registered.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="APPLICATION_CONFIG_STRUCTURE"
+                                language="json" 
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <div class="note-card">
+                                <h3>💡 Notes</h3>
+                                <p>The <code>application</code> attribute is optional. Its purpose is to define the root application container.</p>
+                                <ul>
+                                    <li>
+                                        When the application is initialized using <code>Dom.init()</code>, it first looks at the <code>components</code> attribute list.
+                                        If an entry component (for instance, <code>app-root</code>) is defined there, it will be instantiated as the root.
+                                    </li>
+                                    <li>
+                                        If no entry component is found in the <code>components</code> attribute list, <code>Dom.init()</code> will then check whether an <code>application</code> attribute exists.
+                                        If present, the <code>application</code> will be used to define and initialize the root container.
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Component Initialization -->
+                            <h3 id="component-initialization">Component Initialization <span class="badge">(init.js)</span></h3>
+                            <p>
+                                The <code>init.js</code> file is the bootstrap script. 
+                                Its job is to initialize your application, load the configuration, and register components before rendering.
+                                After defining and registering all components, the application must initialize the system using the <code>Dom.init()</code> method. 
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="APPLICATION_INITIALIZATION"
+                                language="javascript"
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="APPLICATION_INITIALIZATION_WITH_PARAMETER"
+                                language="javascript"
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <p>
+                                By default, <code>app.config.json</code> should be placed at the same folder level as <code>init.js</code>. 
+                                If no parameter is provided, the initializer will look for it automatically.
+                                If the configuration file is stored elsewhere, you can provide its path explicitly:
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="APPLICATION_INITIALIZATION_WITH_CONFIF_FILE"
+                                language="javascript"
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- Entry Point -->
+                            <h3 id="entry-point">Entry Point <span class="badge">(index.html)</span></h3>
+                            <p>
+                                The <code>index.html</code> is the root document of your project. 
+                                It loads the initialization script and acts as the starting point for rendering UI components.
+                                To ensure components are initialized properly at application startup, the <code>init.js</code> file must be imported in the main HTML file.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="APPLICATION_ENTRY_POINT" 
+                                language="xml" 
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <p>
+                                The import map, initialization script, and root component provide the foundation of the application. 
+                                The <code>index.html</code> file serves as the starting point where these elements are brought together to initialize and render the user interface.
+                            </p>
+                        </section>
+                    </section>
+                    <!-- Component Setup -->
+                    <section>
+                        <h2 id="component-setup">🗂️ Component Setup</h2>
+                        <section class="sub-section">
+                            <!-- Component File Structure -->
+                            <h3 id="component-file-structure">Component File Structure</h3>
+                            <p>
+                                Each component in Modular Cube is encapsulated using the Shadow DOM to ensure scoped styles and isolated behavior. 
+                                By convention, a component can be composed of four main files:
+                            </p>
+                            <div class="sub-container flow-chart-container">
+                                <div class="flow-chart-left width40">
+                                    <img src="../static/images/MyComponentFolderStruct.svg" alt="HTMLComponentFlowChart" width="50%">
+                                </div>
+                            </div>
+                            <p>The framework allows you to keep <code>HTML</code> and <code>CSS</code> in separate files for clarity.</p>
+                            <!-- Component Files -->
+                            <h3 id="component-files">Component Files</h3>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <li>
+                                        A Modular Cube component is built from a small set of well-defined files, each responsible for a specific concern. 
+                                        This separation of structure, styling, configuration, and behavior promotes clarity and maintainability. 
+                                        By convention, every component consists of four files:
+                                    </li>
+                                    <ul>
+                                        <li><span>🔹</span><p>A configuration file <code>(.config.json)</code> to declare metadata, file paths, and runtime options.</p></li>
+                                        <li><span>🔹</span><p>A CSS stylesheet <code>(.css)</code> to provide encapsulated styles.</p></li>
+                                        <li><span>🔹</span><p>An HTML template <code>(.html)</code> to define the component’s structure.</p></li>
+                                        <li><span>🔹</span><p>A JavaScript module <code>(.js)</code> to implement the component’s logic and lifecycle.</p></li>
+                                    </ul>
+                                </ul>
+                                <p>Together, these files ensure that each component remains self-contained, easy to reason about, and reusable across different parts of the application.</p>
+                            </div>
+                            <!-- Configuration -->
+                            <h3 id="configuration">Component Files<span class="doc-spacer"> ∕ </span>Configuration <span class="badge">(.config.json)</span></h3>
+                            <p>
+                                The configuration file defines metadata, file references, and runtime behaviors for the component. 
+                                It specifies the paths to the associated <code>HTML</code> and <code>CSS</code> files, along with options such as <code>appendToBody</code>, <code>lazyLoading</code>, and <code>debug</code>.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                renderedContent="COMPONENT_CONFIG_FILE"
+                                language="json"
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- Styling -->
+                            <h3 id="styling">Component Files<span class="doc-spacer"> ∕ </span>Styling <span class="badge">(.css)</span></h3>
+                            <p>
+                                The stylesheet provides styles scoped to the component through the Shadow DOM. 
+                                This ensures that styles remain encapsulated and do not leak into the global document. 
+                                Keeping styles in a separate file helps maintain a clean separation between structure, logic, and presentation.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                data-tab-id="CSS-Styles"
+                                renderedContent="COMPONENT_STYLE_FILE"
+                                language="css"
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- Template -->
+                            <h3 id="template">Component Files<span class="doc-spacer"> ∕ </span>Template <span class="badge">(.html)</span></h3>
+                            <p>
+                                The HTML template defines the component’s structure and static markup. 
+                                It serves as the foundation of the component’s UI, which is later combined with the stylesheet and logic during initialization. 
+                                Using an external template file improves readability and keeps layout concerns separate from logic.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                data-tab-id="HTML-Markup"
+                                renderedContent="COMPONENT_TEMPLATE"
+                                language="xml"
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <!-- MyComponent -->
+                            <h3 id="my-component">Component Files<span class="doc-spacer"> ∕ </span>MyComponent <span class="badge">(.js)</span></h3>
+                            <p>
+                                The JavaScript file implements the component’s logic, lifecycle, and behaviors. 
+                                It loads the configuration, processes the referenced <code>HTML</code> and <code>CSS</code> files (via <code>preProcess()</code>), and manages dynamic interactions. 
+                                This file is responsible for defining how the component behaves.
+                            </p>
+                            <code-viewer 
+                                class="tabcontent"
+                                data-tab-id="Javascript"
+                                renderedContent="COMPONENT_LOGIC"
+                                language="javascript"
+                                theme="tomorrow-night-blue">
+                            </code-viewer>
+                            <p>
+                                Each of these files plays a specific role in defining a component. 
+                                The <code>configuration</code> file describes its metadata and behavior, the <code>CSS</code> handles encapsulated styling, the <code>HTML</code> defines its structure, and the <code>JavaScript</code> manages its logic and lifecycle. 
+                                Together, they provide a clear and modular approach to building self-contained, maintainable components.
+                            </p>
+                        </section>
+                    </section>
+                    <!-- Using Components -->
+                    <section>
+                        <h2 id="using-components">🧩 Using Components</h2>
+                        <!-- HTML -->
+                        <h3 id="work-with-html">HTML</h3>
+                        <section class="sub-section">
+                            <!-- HTML Directives -->
+                            <h3 id="html-directives">Directives</h3>
+                            <p>
+                                HTML directives provide a declarative way to extend component templates by using attributes. 
+                                They make components easier to read and maintain by clearly expressing intent in the markup. 
+                                Directives support dynamic binding, allowing variables, expressions, or configuration values to be injected directly into the template. They can also control behavior, such as managing conditional rendering, iterating over collections, or binding events to elements.
+                            </p>
+                            <!-- HTML variable -->
+                            <h3 id="html-variable">Directives<span class="doc-spacer"> ∕ </span>Variable</h3>
+                            <p>
+                                Variables in Modular Cube templates are expressed in two complementary forms: <span class="highlight">template interpolation</span> and <span class="highlight">parameter injection</span>. 
+                                Both approaches allow component data to be incorporated into the DOM in a controlled and explicit manner, but they serve distinct purposes.
+                            </p>
+                            <!-- Template Interpolation -->
+                            <h3 id="my-component">Directives<span class="doc-spacer"> ∕ </span>Variable<span class="doc-spacer"> ∕ </span>Template Interpolation</h3>
+                            <p>
+                                The <span class="highlight">template interpolation</span> enables the embedding of JavaScript expressions directly within HTML content, using the <code>${this.expression}</code> syntax. 
+                                This mechanism allows dynamic rendering of component state and computed values inline within native HTML templates.
+                                Interpolation is resolved at render time and evaluated within the current data context (typically the component instance <code>this</code> or the shadow root scope).
+                            </p>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <h4>
+                                        📌 Constraints and Best Practices
+                                    </h4>
+                                    <ul>
+                                        <li><span>🔹</span><p>Only valid JavaScript expressions are allowed. These must reference properties or methods available in the current scope.</p></li>
+                                        <li><span>🔹</span><p>Functions used within expressions must be side-effect-free and return a value.</p></li>
+                                        <li><span>🔹</span><p>Expressions should remain simple and easy to read. Complex logic or deeply nested expressions should be avoided.</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="note-card-info">
+                                <h3>🔍 Syntax & Supported Contexts</h3>
+                                <p class="title">Expressions are enclosed in <code>$ { expression }</code>:</p>
+                                <ul> 
+                                    <li>Text content within HTML elements.</li> 
+                                    <li>Attribute values (<code>class</code>, <code>title</code>, <code>placeholder</code>, ... ).</li> 
+                                    <li>Class attribute for dynamic class names.</li> 
+                                    <li>Inline styles via the style attribute.</li>
+                                </ul>
+                            </div>
+                            <collapse-panel title="Variable Interpolation">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="VARIABLE_INTERPOLATION_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="VARIABLE_INTERPOLATION_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="COMPONENT_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                                /* Styling for UI Components */
+                                                :host {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                }
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+
+                                    <!-- Preview -->
+                                    <div class="code-viewer-container">
+                                        <p><code>Inspector View (Elements)</code></p>
+                                        <code-viewer 
+                                            class="tabcontent"
+                                            renderedContent="VARIABLE_INTERPOLATION_RESULT"
+                                            language="xml"
+                                            theme="tomorrow-night-blue">
+                                        </code-viewer>
+                                    </div>
+                                </template>
+                            </collapse-panel>
+                            
+                            <h3 id="my-component">Directives<span class="doc-spacer"> ∕ </span>variable<span class="doc-spacer"> ∕ </span>Parameter injection</h3>
+                            <p>
+                                The <span class="highlight">parameter injection</span> feature provides a mechanism to inject parameter values directly into templates. 
+                                Unlike interpolation, which operates inline, parameter injection designates explicit placeholder elements that are fully replaced with evaluated values during the initial rendering.
+                                The <code>&lt;param value=""&gt;</code> element is used as a placeholder for injecting parameter values into HTML templates. 
+                                At render time, the placeholder is replaced by the evaluated parameter, and the <code>&lt;param value=""&gt;</code> tag itself does not persist in the DOM.
+                            </p>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <h4>
+                                        📌 Constraints and Best Practices
+                                    </h4>
+                                    <ul>
+                                        <li><span>🔹</span><p>Each <code>&lt;param&gt;</code> element with a <code>value</code> attribute is replaced with the current value of the corresponding parameter during the initial render.</p></li>
+                                        <li><span>🔹</span><p>Parameter values are evaluated from the component’s declared parameter scope.</p></li>
+                                        <li><span>🔹</span><p>Complex or computed values should be resolved before assignment to parameters.</p></li>
+                                        <li><span>🔹</span><p>The <code>&lt;param&gt;</code> tag is a placeholder element and does not produce standalone DOM elements after rendering; it is replaced entirely by the parameter’s value.</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="note-card-info">
+                                <h3>🔍 Syntax & Supported Contexts</h3>
+                                <p class="title">Parameter injection is expressed using the <code>&lt;param value=""&gt;</code> element.</p>
+                                <ul> 
+                                    <li>Unlike template interpolation (<code>${this.expression}</code>), parameter injection cannot be used inside attributes such as <code>class</code>, <code>style</code>, or <code>title</code>.</li> 
+                                    <li>The <code>&lt;param&gt;</code> element is limited to injecting values directly into DOM content.</li> 
+                                </ul>
+                            </div>
+                            <collapse-panel title="Rendering Content Using param">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="VARIABLE_INJECTION_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="VARIABLE_INJECTION_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="COMPONENT_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+                                    <!-- Preview -->
+                                    <div class="code-viewer-container">
+                                        <p><code>Inspector View (Elements)</code></p>
+                                        <code-viewer 
+                                            class="tabcontent"
+                                            renderedContent="VARIABLE_INJECTION_RESULT"
+                                            language="xml"
+                                            theme="tomorrow-night-blue">
+                                        </code-viewer>
+                                    </div>
+                                </template>
+                            </collapse-panel>
+                            <p>
+                                Together, <span class="highlight">interpolation</span> and <span class="highlight">parameter injection</span> provide complementary approaches for embedding dynamic values into component templates. 
+                                While interpolation supports inline expressions within attributes and text nodes, parameter injection offers a direct mechanism for inserting parameter values into the DOM.
+                            </p>
+
+                            <!-- HTML condition -->
+                            <h3 id="html-condition">Directives<span class="doc-spacer"> ∕ </span><span>if</span> / <span>else if</span> / <span>else</span></h3>
+                            <p>
+                                The <span class="highlight">if</span> directive provides conditional rendering in HTML templates using declarative expressions. 
+                                It enables developers to control whether a given element and its children should be rendered based on the evaluation of a boolean condition.
+                            </p>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <h4>
+                                        📌 Constraints and Best Practices
+                                    </h4>
+                                    <ul>
+                                        <li><span>🔹</span><p><span class="title">Single Condition Per Element:</span> Each element can only have one conditional directive (<code>if</code>, <code>elseIf</code>, or <code>else</code>).</p></li>
+                                        <li><span>🔹</span><p><span class="title">Evaluation Order:</span> Conditions are evaluated top-to-bottom. The first matching branch is rendered; subsequent branches are skipped.</p></li>
+                                        <li><span>🔹</span><p><span class="title">Mutual Exclusivity:</span> Only one element in a chain (<code>if</code> → <code>elseIf</code> → <code>else</code>) is rendered at a time.</p></li>
+                                        <li><span>🔹</span><p><span class="title">Expression Validity:</span> Conditions must resolve to a boolean value or an expression that can be evaluated to true/false.</p></li>
+                                        <li><span>🔹</span><p><span class="title">Clarity Over Complexity:</span> Keep conditions simple and readable. Prefer computed properties or helper methods for complex logic.</p></li>
+                                        <li><span>🔹</span><p><span class="title">Mutual Exclusivity:</span> Only one element in a chain (<code>if</code> → <code>elseIf</code> → <code>else</code>) is rendered at a time.</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="note-card-info">
+                                <h3>🔍 Syntax & Supported Contexts</h3>
+                                <p class="title">Conditional directives are expressed as HTML attributes on elements and evaluated at render time:</p>
+                                <ul> 
+                                    <li><code>if="${this.expression}"</code> – Renders the element only if the expression evaluates to true.</li> 
+                                    <li><code>elseIf="${this.expression}"</code> – Renders the element if all preceding <code>if/elseIf</code> conditions are false and this expression evaluates to true.</li> 
+                                    <li><code>else</code> – Renders the element if all preceding <code>if</code>/<code>elseIf</code> conditions are false.</li>
+                                </ul>
+                                <p class="title">Supported Contexts:</p>
+                                <ul>
+                                    <li>Directly on standard HTML elements in the template.</li>
+                                    <li>Nested structures, allowing chains of <code>if</code> → <code>elseIf</code> → <code>else</code>.</li>
+                                    <li>Expressions are evaluated in the component instance scope <code>this</code> and may reference component properties or methods.</li>
+                                </ul>
+                            </div>
+                            <collapse-panel title="Conditional Rendering with if">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="CONDITIONAL_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="CONDITIONAL_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="COMPONENT_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+                                    <!-- Preview -->
+                                    <div class="code-viewer-container">
+                                        <p><code>Inspector View (Elements)</code></p>
+                                        <code-viewer
+                                            class="tabcontent"
+                                            renderedContent="CONDITIONAL_RESULT"
+                                            language="xml"
+                                            theme="tomorrow-night-blue">
+                                        </code-viewer>
+                                    </div>
+                                </template>
+                            </collapse-panel>
+                            <collapse-panel title="if Statement with an else Clause">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="COMPONENT_IF_ELSE_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="COMPONENT_IF_ELSE_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="COMPONENT_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+                                    <!-- Preview -->
+                                    <div class="code-viewer-container">
+                                        <p><code>Inspector View (Elements)</code></p>
+                                        <code-viewer 
+                                            class="tabcontent"
+                                            renderedContent="COMPONENT_IF_ELSE_RESULT"
+                                            language="xml"
+                                            theme="tomorrow-night-blue">
+                                        </code-viewer>
+                                    </div>
+                                </template>
+                            </collapse-panel>
+                            <collapse-panel title="if, else if, and else Chain">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="COMPONENT_IF_ELSEIF_ELSE_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="COMPONENT_IF_ELSEIF_ELSE_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="COMPONENT_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+                                    <!-- Preview -->
+                                    <div class="code-viewer-container">
+                                        <p><code>Inspector View (Elements)</code></p>
+                                        <code-viewer 
+                                            class="tabcontent" 
+                                            renderedContent="COMPONENT_IF_ELSEIF_ELSE_RESULT"
+                                            language="xml" 
+                                            theme="tomorrow-night-blue">
+                                        </code-viewer>
+                                    </div>
+                                </template>
+                            </collapse-panel>
+                            <div class="note-card">
+                                <h3>💡 Notes</h3>
+                                <p>
+                                    In JavaScript, you can absolutely use <code>if</code>, <code>else if</code>, <code>else if</code> without a final <code>else</code>. 
+                                    The else block is completely optional.
+                                </p>
+                                <ul>
+                                    <li>✅ You can have just <code>if</code></li>
+                                    <li>✅ You can have <code>if</code>...<code>else</code></li>
+                                    <li>✅ You can have <code>if</code>...<code>else if</code>...<code>else</code></li>
+                                    <li>✅ You can have <code>if</code>...<code>else if</code>...<code>else if</code> (with or without <code>else</code>)</li>
+                                </ul>
+                            </div>
+                            <p>
+                                The <span class="highlight">if</span> directive allows declarative, structured control of what elements are rendered based on logical conditions. Support for <code>else if</code>, <code>else</code>, and nested conditionals provides flexibility while maintaining clear and predictable rendering behavior. 
+                                The use of native HTML syntax and controlled evaluation reinforces clarity, performance, and consistency with modern web development practices.
+                            </p>
+                            <!-- HTML loop -->
+                            <h3 id="html-loop">Directives<span class="doc-spacer"> ∕ </span>forEach</h3>
+                            <p>
+                                The <span class="highlight">forEach</span> directive in enables declarative iteration over collections within HTML templates. 
+                                It renders a repeated structure for each item in a given array or iterable, following a clear and scoped expression pattern. 
+                                This approach brings structured, readable list rendering to markup using standard JavaScript expression syntax.
+                                This directive is designed to integrate seamlessly with the component's data context and maintain clarity in both simple and nested list structures.
+                            </p>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <h4>
+                                        📌 Constraints and Best Practices
+                                    </h4>
+                                    <ul>
+                                        <li><span>🔹</span><p><span class="title">Scoped Variables:</span> The loop variable is only valid inside the iteration block. It should not conflict with variables declared in outer scopes.</p></li>
+                                        <li><span>🔹</span><p><span class="title">Combined with Directives:</span> Loop-generated elements can also use conditional directives (<code>if</code>, <code>elseIf</code>, <code>else</code>) within the iteration body.</p></li>
+                                        <li><span>🔹</span><p><span class="title">Static and Dynamic Data:</span> Works with both static arrays defined at initialization and dynamic data updated during component lifecycle.</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="note-card-info">
+                                <h3>🔍 Syntax & Supported Contexts</h3>
+                                <p class="title">The forEach directive is expressed as an HTML attribute and enables iteration over iterable data structures:</p>
+                                <ul>
+                                    <li><code>${this.forExpression}</code> – Repeats the element for each value in the iterable <code>this.items</code>, binding the current value to the loop variable.</li>
+                                </ul>
+                                <p class="title">
+                                    Supported Contexts:
+                                </p>
+                                <ul> 
+                                    <li>Applied to any HTML element as a directive attribute.</li> 
+                                    <li>Loop variable may be referenced inside the repeated element using interpolation (<code>${this.forExpressionItem}</code>) or parameter injection (<code>&lt;param value="${this.forExpressionItem}"&gt;</code>).</li> 
+                                    <li>Iteration supports arrays and any iterable object in JavaScript.</li>
+                                    <li>Nested iterations are allowed, with each loop maintaining its own scope.</li>
+                                </ul>
+                            </div>
+                            <collapse-panel title="Looping with forEach">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="COMPONENT_FOR_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="COMPONENT_FOR_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="COMPONENT_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+                                    <!-- Preview -->
+                                    <div class="code-viewer-container">
+                                        <p><code>Inspector View (Elements)</code></p>
+                                        <code-viewer
+                                            class="tabcontent"
+                                            renderedContent="COMPONENT_FOR_RESULT"
+                                            language="xml"
+                                            theme="tomorrow-night-blue">
+                                        </code-viewer>
+                                    </div>
+                                </template>
+                            </collapse-panel>
+                            <p>
+                                The <span class="highlight">forEach</span> directive offers a concise and powerful way to generate HTML content dynamically based on collection data. 
+                                With native expression support and clear scope handling, it supports structured iteration at any depth and promotes maintainable template design. 
+                                Repeated content is easy to define and aligns with modern rendering practices through direct integration with JavaScript evaluation and native web capabilities.
+                            </p>
+                            <!-- Events -->
+                            <h3 id="html-events">Events</h3>
+                            <p>
+                                HTML directives support binding JavaScript event handlers directly within your markup using a simple and consistent syntax. 
+                                It handle DOM events like <code>click</code>, <code>input</code>, <code>keydown</code>, <code>mouseenter</code>, and more.
+                                These bindings follow standard JavaScript event behavior but are declared directly in the template, no need for addEventListener or inline onclick attributes.
+                            </p>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <h4>
+                                        📌 Important Rules
+                                    </h4>
+                                    <ul>
+                                        <li><span>🔹</span><p>Use the format: <code><span class="placeholder">placeholder</span>Event="this.functionCall(...)"</code>.</p></li>
+                                        <li><span>🔹</span><p>The event name must be lowercase and match a standard DOM event (e.g. <code>click</code>, <code>input</code>, <code>keydown</code>).</p></li>
+                                        <li><span>🔹</span><p>You must append <code>Event</code> to the event name: <code>clickEvent</code>, <code>inputEvent</code>, <code>keydownEvent</code>, etc.</p></li>
+                                        <li><span>🔹</span><p>The value must be a valid JavaScript function call (with or without arguments).</p></li>
+                                        <li><span>🔹</span><p>The <code>$event</code> object can be passed to access native event data.</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <collapse-panel title="Event Bindings">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="COMPONENT_EVENT_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="COMPONENT_EVENT_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="COMPONENT_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+                                    <!-- Preview -->
+                                    <div class="code-viewer-container">
+                                        <p><code>Inspector View (Console)</code></p>
+                                        <code-viewer 
+                                            class="tabcontent"
+                                             renderedContent="COMPONENT_EVENT_RESULT"
+                                            language="xml"
+                                            theme="tomorrow-night-blue">
+                                        </code-viewer>
+                                    </div>
+                                </template>
+                            </collapse-panel>
+                            <div class="note-card">
+                                <h3>💡 Notes</h3>
+                                <ul>
+                                    <li>✅ You can bind any number of events to an element.</li>
+                                    <li>✅ Any function accessible in the component’s scope can be used.</li>
+                                    <li>✅ <code>$event</code> gives you access to native event details (like target, key, etc.).</li>
+                                    <li>❌ Do not use <code>onClick</code>, <code>onInput</code>, etc. — use <code>clickEvent</code>, <code>inputEvent</code>, etc. instead.</li>
+                                    <li>✅ Event bindings can be combined with <code>if</code> / <code>else if</code> / <code>else</code> and <code>forEach</code> for dynamic UI behavior.</li>
+                                </ul>
+                            </div>
+                        </section>
+                        <!-- CSS -->
+                        <h3 id="work-with-css">CSS</h3>
+                        <section class="sub-section">
+                            <!-- CSS Directives -->
+                            <h3 id="css-directives">Directives</h3>
+                            <p>
+                                CSS directives provide a way to make component styling more flexible and maintainable by supporting variable substitution and scoped customization. 
+                                They enable styles to adapt dynamically at runtime without breaking encapsulation.
+                            </p>
+                            <!-- CSS variable -->
+                            <h3 id="my-component">Directives<span class="doc-spacer"> ∕ </span>variable</h3>
+                            <p>
+                                Template interpolation enables the embedding of JavaScript expressions directly within CSS content, using the <code>${this.expression}</code> syntax.                    
+                                This works similarly to HTML template interpolation, allowing you to bind JavaScript properties or return values directly into your styles at render time. 
+                            </p>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <h4>
+                                        📌 Important Rules
+                                    </h4>
+                                    <ul>
+                                        <li><span>🔹</span><p>Expressions must be valid JavaScript and scoped to the current component (<code>this.property</code> or <code>this.method()</code>).</p></li>
+                                        <li><span>🔹</span><p>Only values that result in a valid CSS value are allowed (colors, units, keywords).</p></li>
+                                        <li><span>🔹</span><p>Function calls must return a value and must be pure (no side effects).</p></li>
+                                        <li><span>🔹</span><p>You can interpolate in inline styles, style blocks, or custom properties (e.g., <code>--my-color: $ {this.color}</code>).</p></li>
+                                        <li><span>🔹</span><p>Do not use interpolation inside CSS selectors or media queries, only in property values.</p></li>
+                                        <li><span>🔹</span><p>Keep expressions simple and readable. Avoid chaining or complex logic inside styles.</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <collapse-panel title="Interpolation in CSS">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="CSS_INTERPOLATION_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="EMPTY_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="CSS_INTERPOLATION_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+                                    <!-- Preview -->
+                                    <div class="code-viewer-container">
+                                        <p><code>Inspector View (Elements)</code></p>
+                                        <code-viewer 
+                                            class="tabcontent"
+                                            renderedContent="CSS_INTERPOLATION_RESULT"
+                                            language="xml"
+                                            theme="tomorrow-night-blue">
+                                        </code-viewer>
+                                    </div>
+                                </template>
+                            </collapse-panel>
+                            <div class="note-card" style="margin-bottom: 12px;">
+                                <h3>💡 Notes</h3>
+                                <ul>
+                                    <li>CSS interpolation works at render time, changes to reactive properties will automatically reflect in styles.</li>
+                                    <li>This feature is framework-specific and not standard browser behavior. It is optimized for Shadow DOM scoping and dynamic styling needs.</li>
+                                    <li>Only string-compatible values will work, no objects, arrays, or DOM references.</li>
+                                    <li>You can use component-scoped CSS variables for theming or design tokens, <code>--theme-accent: $ {this.accentColor}</code>.</li>
+                                </ul>
+                            </div>
+                        </section>
+                        <!-- JavaScript -->
+                        <h3 id="work-with-js">JavaScript</h3>
+                        <section class="sub-section">
+                            <!-- Observable -->
+                            <h3 id="observable">Observable</h3>
+                            <p>
+                                The framework includes a lightweight <span class="highlight">Observable</span> utility for managing event-based communication between components or logic blocks.
+                                This pattern allows you to decouple parts of your application by subscribing to and publishing named events, similar to a pub/sub model.
+                            </p>
+                            <div class="doc-container">
+                                <ul class="doc-list">
+                                    <h4>
+                                        📌 Core Concepts
+                                    </h4>
+                                    <ul>
+                                        <li><span>🔹</span><p><code>subscribe(name, subscriber)</code>: Register a function to run when a named event is published.</p></li>
+                                        <li><span>🔹</span><p><code>unsubscribe(name)</code>: Remove a previously registered event handler.</p></li>
+                                        <li><span>🔹</span><p><code>publish(name, payload)</code>: Trigger all subscriber callbacks for the given event name, passing in an optional payload.</p></li>
+                                        <li><span>🔹</span><p>Each event supports a single active subscriber, subsequent calls with the same name will replace previous ones.</p></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <collapse-panel title="Publish an Observable">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="OBSERVABLE_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="EMPTY_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="COMPONENT_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+                                </template>
+                            </collapse-panel>
+                            <collapse-panel title="Subscribe to an Observable">
+                                <template>
+                                    <tab-panel tabs="${this.tabNames}">
+                                        <template>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.js"
+                                                renderedContent="OBSERVABLE_SUBSCRIBE_LOGIC"
+                                                language="javascript"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.html"
+                                                renderedContent="EMPTY_TEMPLATE"
+                                                language="xml"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer 
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.css"
+                                                renderedContent="COMPONENT_STYLE"
+                                                language="css"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                            <code-viewer
+                                                class="tabcontent"
+                                                data-tab-id="MyComponent.config.json"
+                                                renderedContent="COMPONENT_CONFIG"
+                                                language="json"
+                                                theme="tomorrow-night-blue">
+                                            </code-viewer>
+                                        </template>
+                                    </tab-panel>
+                                </template>
+                            </collapse-panel>
+                            <div class="note-card">
+                                <h3>💡 Notes</h3>
+                                <ul> 
+                                    <li>Component A notifies Component B to refresh data.</li> 
+                                    <li>This is a global system, use unique event names to avoid collisions.</li> 
+                                </ul>
+                            </div>
+                            <p>
+                                The <span class="highlight">Observable</span> system can be used for reactive data handling, custom event broadcasting, or integrating cross-component behaviors in a clean, manageable way.
+                            </p>
+
+                            <!-- TODO -->
+                            <!-- Update -->
+                            <!-- <h3 id="update">Update</h3> -->
+                            <!--  -->
+
+                        </section>
+                    </section>
+                    <!-- Changelog -->
+                    <section>
+                        <h2 id="changelog">📝 Changelog</h2>
+                        <section class="sub-section">
+                            <div>
+                                <h3><span class="date">Year 2025</span></h3>
+                                <ul class="log-group added">
+                                    <li><strong>Added:</strong></li>
+                                    <li>Initial beta release.</li>
+                                    <li>Base <code>HTMLComponent</code> class with Shadow DOM support.</li>
+                                    <li>Structured 4-file component convention (.js, .html, .css, .config.json).</li>
+                                    <li>Lifecycle flow: <code>preProcess()</code> → <code>toProcess()</code> → <code>atProcess()</code> → <code>inProcess()</code>.</li>
+                                    <li>Support for <code>lazyLoading</code>.</li>
+                                    <li>Component registry via <code>app.config.json</code>.</li>
+                                    <li>Global <code>Dom.init()</code> for unified initialization.</li>
+                                    <li>Template interpolation directly within HTML content and CSS</code>.</li>
+                                    <li><code>if</code>, <code>else if</code>, <code>else</code> and <code>forEach</code> directive availaible in the HTML template.</code>.</li>
+                                </ul>
+                                <ul class="log-group changed">
+                                    <li><strong>Work in progress:</strong></li>
+                                    <li><span class="highlight">Targeted Updates</span>: scoped and localized update for DOM elements.</li>
+                                    <li>Support for <code>apendToBody</code>.</li>
+                                </ul>
+                                <ul class="log-group fixed">
+                                    <li><strong>Next to come:</strong></li>
+                                    <li><span class="highlight">Reactive Data Binding</span>: core mechanism that updates the DOM when data changes.</code>.</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+                <!-- Ads -->
+                <div id="ads">
+                    <div class="ads-container">
+                        <div class="section-notice">
+                            <div class="notice-icon">🚧 Under Construction</div>
+                            <div class="notice-text">Content for this section will be available soon.</div>
+                        </div>
+                    </div>
+                </div>
+            </manual>
+            <!-- Disclaimer -->
+            <disclaimer> Terms – Privacy – Docs – Contact – Support – Manage cookies – Do not share my personal information </disclaimer>
+        </template>
+    </app-root>
 </body>
 </html>

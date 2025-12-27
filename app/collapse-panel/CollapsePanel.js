@@ -17,7 +17,8 @@ export default class CollapsePanel extends HTMLComponent {
 
     inProcess(dom) {
         let content = this.shadow.querySelector("#content");
-        content.innerHTML += this.template;
+        // content.innerHTML += this.template;
+        content.insertAdjacentHTML('beforeend', this.template);
 
         dom.querySelectorAll('.collapse-container').forEach(container => {
             const header = container.querySelector('.collapse-header');

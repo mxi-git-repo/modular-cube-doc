@@ -142,7 +142,7 @@ export default class TabPanel extends HTMLComponent {
     }
 
     switchTabs(event, tabName) {
-        const tabToDisplay = this.shadow.querySelector(`[data-tab-id=${tabName}]`);
+        const tabToDisplay = this.shadow.querySelector(`[data-tab-id="${tabName}"]`);
         let tabcontent = this.shadow.querySelectorAll(".tabcontent");
 
         for (let i = 0; i < tabcontent.length; i++) {

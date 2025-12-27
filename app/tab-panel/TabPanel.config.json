@@ -11,7 +11,7 @@
     },
     "behavior" : {
         "apendToBody": false,
-        "lazyLoading": false,
+        "lazyLoading": true,
         "debug": false
     }
 }
