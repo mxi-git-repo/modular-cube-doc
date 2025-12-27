@@ -1,7 +1,7 @@
 import { HTMLComponent } from '@modular-cube';
 import config from './CodeViewer.config.json' with { type: "json" };
 
-import * as Examples from '../../static/data/examples.js';
+import * as Examples from './data/examples.js';
 import { HighlightJS } from './highlight/core.js';
 
 export default class CodeViewer extends HTMLComponent {
