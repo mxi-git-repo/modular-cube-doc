@@ -1,5 +1,4 @@
 import { Dom } from '@modular-cube';
-import * as Examples from '../static/data/examples.js';
 
 await Dom.init(
     () => {
