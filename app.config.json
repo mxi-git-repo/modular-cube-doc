@@ -1,22 +1,6 @@
 {
   "modularCube": {
-    "application": {
-      "name": "app-root",
-      "descripttion": "",
-      "files": {
-        "html": {
-          "path": ""
-        },
-        "css": {
-          "path": ""
-        }
-      },
-      "behavior": {
-        "apendToBody": false,
-        "lazyLoading": false,
-        "debug": false
-      }
-    },
+    "normalizeStyle": false,
     "components": [
       {
         "tag": "app-root",
