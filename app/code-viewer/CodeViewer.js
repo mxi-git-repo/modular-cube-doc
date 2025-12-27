@@ -1,6 +1,6 @@
 import { HTMLComponent } from '@modular-cube';
+import * as Examples from '@viewer-examples';
 import config from './CodeViewer.config.json' with { type: "json" };
-import * as Examples from '../../static/data/examples.js';
 
 import { HighlightJS } from './highlight/core.js';
 
