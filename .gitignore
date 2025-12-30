@@ -19,7 +19,7 @@ Thumbs.db
 
 # Environment variables
 .env
-.env.*     # e.g. .env.production, .env.local
+.env.*
 
 # Cache
 .cache/
@@ -36,7 +36,7 @@ coverage/
 *.swp
 *.code-workspace
 
-# Lock files (optional if using one package manager only)
+# Lock files
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
